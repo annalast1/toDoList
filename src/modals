@@ -1,0 +1,63 @@
+import { showProjectForm, showStepForm, closeProjectForm, closeStepForm } from "./domController";
+import { createNewProject, currentProject } from "./project";
+import { createNewStep } from "./step";
+
+export function SetUpListeners() {
+    // show project dialog
+    const addProjectBtn = document.querySelector('#addProjectBtn');
+
+     if (addProjectBtn != null) {
+        addProjectBtn.addEventListener("click", showProjectForm); 
+    };
+    // submit project data
+    const addProjectFormBtn = document.getElementById("addProjectFormBtn");
+
+    if (addProjectFormBtn != null) {
+        addProjectFormBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            // get data - create and store project 
+            const title = projectFormData();
+            closeProjectForm();
+            createNewProject(title);                
+        })
+    }
+    // Cancel button functionality
+    const cancelTaskFormBtn = document.getElementById('cancelTaskFormBtn');
+    cancelTaskFormBtn?.addEventListener("click", closeStepForm)
+    }  
+    // show step form   
+    const addStepBtn = document.getElementById("addStepBtn");
+        if (addStepBtn != null) {    
+        addStepBtn.addEventListener("click", () => {
+            if (currentProject == null) {
+                alert("Select a project to add steps");
+            } else {
+                showStepForm();
+            }
+        })
+    // Submit step form data
+    const addTaskFormBtn = document.getElementById('addTaskFormBtn');
+    addTaskFormBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Get data - create and store new task
+        stepFormData();
+        closeStepForm();        
+    })
+};
+
+function projectFormData() {
+
+    const title = document.getElementById("projectTitle").value;
+    return title;
+};
+
+function stepFormData() {
+    
+    const taskName = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const dueDate = document.getElementById("dueDate").value;
+    const priority = document.getElementById("priority").value;
+
+    createNewStep(taskName, description, dueDate, priority);
+};
+

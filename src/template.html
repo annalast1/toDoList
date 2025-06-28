@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step By Step</title>
+</head>
+<body>
+    <header id="logo">
+        <h1>Step By Step</h1> 
+        <img src="./icons/personal-growth-icon.svg" alt="steps">  
+    </header>
+    <dialog id="projectForm">
+        <form id="pform" name="pform">
+            <input type="text" placeholder="Enter Title" id="projectTitle" name="projectTitle">
+            <div id="projectBtn">
+                <button id="addProjectFormBtn" class="addto">Add</button>
+                <button id="cancelProjectFormBtn" class="addto">Cancel</button>
+            </div>
+        </form>
+        </dialog>
+    <dialog id="stepsForm">
+        <form id="sform">
+            <label for="title">Task name</label>
+            <input type="text" id="title" required>
+            <textarea name="description" id="description" rows="3" cols="50" placeholder="Description (Optional)"></textarea>
+            <label for="dueDate">Due date</label>
+            <input type="date" id="dueDate" placeholder="dd/mm/yyyy">
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </form>
+        <div id="buttonBox">
+            <button id="addTaskFormBtn" class="addto">Add</button>
+            <button id="cancelTaskFormBtn" class="addto">Cancel</button>
+        </div>
+    </dialog>
+    <div id="content">  
+        <div id="projects">
+            <h2>Projects</h2>
+            <button id="addProjectBtn" class="addto">+Add Project</button>
+            <div id="projectDiv">
+                
+            </div>
+        </div>
+        <div id="steps">
+            <div class="stepsTitle">
+                <h2>Steps</h2>
+                <button class="addto" id="addStepBtn">+Add Step</button>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
