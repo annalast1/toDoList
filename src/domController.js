@@ -115,6 +115,5 @@ export function EditForm() {
     stepsForm.close;
     const sform = document.getElementById('sform');
     sform.reset();
-    stepsForm.close();
-    
+    stepsForm.close();    
 }

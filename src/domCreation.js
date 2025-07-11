@@ -1,7 +1,7 @@
 import { removeProject, updateDisplay, clearTodos, removeTodo, editTodo } from "./domController";
 import { setCurrent, myProjects, createNewProject } from "./project";
 
-export let isEdit = false;
+
 export function renderProject(title, id) {
     
         const projectDiv = document.getElementById("projectDiv");
@@ -23,12 +23,12 @@ export function renderProject(title, id) {
         });
         box.append(h3, trash);
         projectDiv.append(box);    
-}
+};
 
 export function createDefault() {
     const dfault = createNewProject('Default'); 
     updateDisplay(myProjects);
-}
+};
 
 export function renderTodos(project) {
     // Remove existing todos
@@ -47,7 +47,7 @@ export function renderTodos(project) {
             h3.classList.add('completed');
         })
         const dueDate = document.createElement('p');
-        dueDate.textContent = 'Due: ' + task.dueDate;
+        dueDate.textContent = 'Due: ' + task.dueDate.split("-").reverse().join("-");
         const imp = document.createElement('img');
         switch(task.priority) {
             case 'high':
