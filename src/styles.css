@@ -15,7 +15,7 @@ body {
     font-family: ('source_sans_proregular', sans-serif);
     box-sizing: border-box;
     background-color: black;
-    color: white;
+    color: #EDEADE;
 }
 
 /* Header */
@@ -39,7 +39,7 @@ img {
 #content {
     width: 100%;
     display: grid;
-    grid-template-columns: 1.3fr 3.5fr;
+    grid-template-columns: 1fr 3.5fr;
     gap: 20px;
     padding-top: 25px;
 }
@@ -48,8 +48,8 @@ img {
     font-size: 40px;
     padding-bottom: 20px;
 }
-
-.projectDiv .h3 {
+/* project */
+.buttonH3 {
     font-size: 30px;
     margin-bottom: 4px;
     background: orange;
@@ -61,7 +61,7 @@ img {
 #projects,
 #steps {
     color: black;
-    background-color: white;
+    background-color: #EDEADE;
     padding: 20px;
     border-radius: 20px;
 }
@@ -73,7 +73,6 @@ img {
 .stepsTitle {
     display: flex;
     justify-content: space-between;
-    border-bottom: 5px solid orange;
 }
 
 .addto {
@@ -84,7 +83,7 @@ img {
     font-size: 16px;
     border-radius: 10px;
     border: 2px solid green;
-    color: white;
+    color: #EDEADE;
 }
 
 #addStepBtn {
@@ -147,7 +146,8 @@ label {
     gap: 50px;
 }
 
-.bin {
+.bin,
+.edit {
     width: 20px;
 }
 
@@ -168,5 +168,23 @@ select {
     display: block;
     margin: 0;
     margin-top: 10px;
+}
+
+/* Steps display */
+.stepBox {
+    border: 2px solid green;
+    margin-bottom: 10px;
+    font-size: 26px;
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 4fr 2fr 0.25fr 0.25fr;
+    align-items: center;   
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+.completed {
+    text-decoration: line-through;
 }
 

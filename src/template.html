@@ -21,9 +21,8 @@
         </dialog>
     <dialog id="stepsForm">
         <form id="sform">
-            <label for="title">Task name</label>
+            <label for="title">Task</label>
             <input type="text" id="title" required>
-            <textarea name="description" id="description" rows="3" cols="50" placeholder="Description (Optional)"></textarea>
             <label for="dueDate">Due date</label>
             <input type="date" id="dueDate" placeholder="dd/mm/yyyy">
             <label for="priority">Priority</label>
@@ -40,8 +39,8 @@
     </dialog>
     <div id="content">  
         <div id="projects">
-            <h2>Projects</h2>
-            <button id="addProjectBtn" class="addto">+Add Project</button>
+            <h2>Goals</h2>
+            <button id="addProjectBtn" class="addto">+Add Goal</button>
             <div id="projectDiv">
                 
             </div>
@@ -50,6 +49,9 @@
             <div class="stepsTitle">
                 <h2>Steps</h2>
                 <button class="addto" id="addStepBtn">+Add Step</button>
+            </div>
+            <div id="stepsDiv">
+                
             </div>
         </div>
     </div>  

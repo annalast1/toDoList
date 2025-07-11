@@ -1,8 +1,10 @@
 import { storeProjects } from "./storage";
 import { updateDisplay } from "./domController";
+import { renderTodos } from "./domCreation";
+
 
 export let myProjects = [];  
-export let currentProject;
+export let currentProject = {};
 
 // add project objects to array and update local storage with array
 export class Project {
@@ -14,11 +16,11 @@ export class Project {
     }
 
     addProject(x) {
-        myProjects.push(x);
+        return  myProjects.push(x);
     }
 
     addTodo(Step) {
-        this.todo.push(Step);
+        return this.todo.push(Step);
     }
 }
 
@@ -38,16 +40,32 @@ export function createNewProject(title) {
     
     if (p == true) {
         const x = new Project(title);
-        x.addProject(x); 
+        x.addProject(x);
         storeProjects(myProjects);
         updateDisplay(myProjects);     
     }
 }
 
 export function setCurrent(title) {
-   currentProject = title;
-   console.log(currentProject);
+    const all = document.querySelectorAll(".buttonH3");
+    all.forEach(item => {
+        item.style.color = 'black';
+    })    
+
+    myProjects.forEach(item => {
+        if (item.title == title) {
+            currentProject = item;
+        }
+    const x = document.getElementById(title);
+    x.style.color = '#EDEADE';
+   })
+   renderTodos(currentProject);
 }
+
+
+
+
+
 
 
 

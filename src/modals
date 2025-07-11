@@ -29,7 +29,7 @@ export function SetUpListeners() {
     const addStepBtn = document.getElementById("addStepBtn");
         if (addStepBtn != null) {    
         addStepBtn.addEventListener("click", () => {
-            if (currentProject == null) {
+            if (currentProject.title == null) {
                 alert("Select a project to add steps");
             } else {
                 showStepForm();
@@ -37,7 +37,7 @@ export function SetUpListeners() {
         })
     // Submit step form data
     const addTaskFormBtn = document.getElementById('addTaskFormBtn');
-    addTaskFormBtn?.addEventListener("click", (e) => {
+    addTaskFormBtn.addEventListener("click", (e) => {
         e.preventDefault();
         // Get data - create and store new task
         stepFormData();
@@ -52,12 +52,11 @@ function projectFormData() {
 };
 
 function stepFormData() {
-    
     const taskName = document.getElementById("title").value;
-    const description = document.getElementById("description").value;
     const dueDate = document.getElementById("dueDate").value;
     const priority = document.getElementById("priority").value;
-
-    createNewStep(taskName, description, dueDate, priority);
+    console.log(dueDate);
+    createNewStep(taskName, dueDate, priority);
 };
+
 
